@@ -1,0 +1,65 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <div id="header_title">Janma</div>
+    </header>
+
+    <main>
+        <div id="main_div">
+            <h1 id="mode_title">{{ title }}</h1>
+
+            <form method="POST" id="form">
+                {% csrf_token %}
+                <table class="form_table">
+                    <tr>
+                        <th class="col1"></th>
+                        <th class="col2"></th>
+                        <th class="col3"></th>
+                    </tr>
+                    <tr>
+                        <td class="col1">{{ form.id.label }}</td>
+                        <td class="col2">:</td>
+                        <td class="col3">{{ form.id }}</td>
+                    </tr>
+                    <tr>
+                        <td class="col1">{{ form.password.label }}</td>
+                        <td class="col2">:</td>
+                        <td class="col3">{{ form.password }}</td>
+                    </tr>
+                    {% if mode == 'toroku' %}
+                    <tr>
+                        <td class="col1">{{ form.re_password.label }}</td>
+                        <td class="col2">:</td>
+                        <td class="col3">{{ form.re_password }}</td>
+                    </tr>
+                    {% endif %}
+                </table>
+            </form>
+
+            <form method="GET" id="change_form"></form>
+            {% if mode == 'login' %}
+            <button formaction="{% url 'janma:login_auth' %}" form="form" class="auth_btn">GO</button>
+            <br>
+            <button formaction="{% url 'janma:janma_login' %}" form="change_form" class="change_btn">新規登録→</button>
+            <form></form>
+            {% else %}
+            <button formaction="{% url 'janma:login_auth' %}" form="form" class="auth_btn">GO</button>
+            <br>
+            <button formaction="{% url 'janma:janma_login' %}" form="change_form" class="change_btn">ログイン→</button>
+            {% endif %}
+        </div>
+    </main>
+    
+</body>
+</html>
