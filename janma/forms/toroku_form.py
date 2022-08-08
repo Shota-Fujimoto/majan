@@ -12,32 +12,34 @@ class toroku_form(forms.Form):
         required=True, 
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'ユーザー名もしくはメールアドレス',
-                'class': 'toroku_input'
+                'placeholder': 'メールアドレス',
+                'class': 'form_input'
             }
         )
     )
     #パスワード
     password = forms.CharField(
-        label='PASS', 
+        label='パスワード', 
         required=True,
         min_length=8, 
+        max_length=20,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder': 'パスワード',
-                'class': 'toroku_input'
+                'placeholder': '8文字以上20文字以内',
+                'class': 'form_input'
             }
         )
     )
     #再パスワード
     re_password = forms.CharField(
-        label='RE_PASS', 
+        label='確認用パスワード', 
         required=True,
         min_length=8, 
+        max_length=20,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder': 'パスワード',
-                'class': 'toroku_input'
+                'placeholder': '8文字以上20文字以内',
+                'class': 'form_input'
             }
         )
     )

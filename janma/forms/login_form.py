@@ -12,20 +12,20 @@ class login_form(forms.Form):
         required=True, 
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'ユーザー名もしくはメールアドレス',
-                'class': 'login_input'
+                'placeholder': 'メールアドレス',
+                'class': 'form_input'
             }
         )
     )
     #パスワード
     password = forms.CharField(
-        label='PASS', 
+        label='パスワード', 
         required=True,
         min_length=8, 
         widget=forms.PasswordInput(
             attrs={
-                'placeholder': 'パスワード',
-                'class': 'login_input'
+                'placeholder': '8文字以上20文字以内',
+                'class': 'form_input'
             }
         )
     )

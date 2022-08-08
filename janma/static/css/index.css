@@ -23,7 +23,7 @@ main {
     text-align: center;
     border: 4px solid green;
     border-radius: 30px;
-    padding: 10px;
+    padding: 20px;
 }
 
 #mode_title{
@@ -57,7 +57,7 @@ main {
     padding: 7px;
 }
 
-.login_input {
+.form_input {
     width: 100%;
     height: auto;
     font-size: 20px;
@@ -75,7 +75,7 @@ main {
     color: green;
     background-color: white;
     border: 3px solid green;
-    margin: 30px auto 10px;
+    margin: 30px auto;
     text-align: center;
 }
 
@@ -83,16 +83,35 @@ main {
     border: 3px solid white;
     background-color: green;
     color: white;
-    margin-bottom: 10px;
 }
 
 .change_btn {
     font-size: 25px;
     border: none;
     background-color: white;
-    margin-top: 10px;
 }
 
 .change_btn:hover {
     color: orange;
+}
+
+.err_msg {
+    color: red;
+    font-size: 18px;
+}
+
+hr {
+    height: 1px;
+    background-color: green;
+    border: none;
+}
+
+.link_top {
+    color: green;
+    font-size: larger;
+    position: relative;
+    top: -25px;
+    width: 80px;
+    margin: auto;
+    background-color: white;
 }
